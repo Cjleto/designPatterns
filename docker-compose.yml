@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  php-apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+      - ./vhosts.conf:/etc/apache2/sites-enabled/vhosts.conf
+    ports:
+      - 8011:80
+      - 9005:9005
+    environment:
+      PHP_IDE_CONFIG: "serverName=Docker"
+
+volumes:
+  php-apache-data:
+
+networks:
+  default:
+    driver: bridge
