@@ -14,11 +14,14 @@ echo "{$caffe->getDescription()}: {$caffe->getCurrency()} {$caffe->cost()}" . "<
 echo "{$te->getDescription()}: {$te->getCurrency()} {$te->cost()}"."<br>"; */
 
 
-$caffe = new Sugar($caffe);
+/* $caffe = new Sugar($caffe);
 echo "{$caffe->getDescription()}: {$caffe->getCurrency()} {$caffe->cost()}" . "<br>";
 $caffe = new Milk($caffe);
 echo "{$caffe->getDescription()}: {$caffe->getCurrency()} {$caffe->cost()}" . "<br>";
+
 $caffe = new Sugar($caffe);
-echo "{$caffe->getDescription()}: {$caffe->getCurrency()} {$caffe->cost()}" . "<br>";
+echo "{$caffe->getDescription()}: {$caffe->getCurrency()} {$caffe->cost()}" . "<br>"; */
+
+echo $caffe->getUnionDescription() . "";
 
 dd($caffe);

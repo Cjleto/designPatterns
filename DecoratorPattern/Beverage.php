@@ -18,5 +18,26 @@ abstract class Beverage
         return $this->currency;
     }
 
+    public function getUnionDescription()
+    {
+        $desc = $this->getDescription();
+
+        $array = explode(' + ', $desc);
+
+        $res = array_count_values($array);
+
+        array_walk($res, function (&$value, $key) {
+            $value = "x{$value} {$key}";
+        });
+
+        $str = implode(", ", $res);
+
+        // substitute last comma with 'and'
+        $str = preg_replace('/,([^,]*)$/', ' and$1', $str);
+
+
+        return $str;
+    }
+
     abstract public function cost(): float;
 }
